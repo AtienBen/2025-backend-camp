@@ -21,12 +21,14 @@ class CreditPackageController {
       })
       res.status(200).json({
         status: 'success',
-        data: creditPackage
+        data: creditPackage,
+        total: creditPackage.length
       })
     } catch (error) {
       logger.error(error)
       next(error)
     }
+
   }
 
   static async postCreditPackage (req, res, next) {
